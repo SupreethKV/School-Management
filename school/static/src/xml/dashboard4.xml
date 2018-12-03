@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <templates id="template3" xml:space="preserve">
+        <t t-name="dashboard4">
+            <div class="col-xs-12" style="margin-top: 3%;">
+                <div class="col-xs-3" style="margin: 0;padding: 0;">
+                    <img src="/school/static/src/img/dashboard4.jpg" style="width:1000px;"/>
+                </div>
+            </div>
+        </t>
+    </templates>
+

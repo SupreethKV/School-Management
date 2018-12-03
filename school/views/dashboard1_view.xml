@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="assets_backend" inherit_id="web.assets_backend" name="ARS Assets back">
+		<xpath expr="." position="inside">
+			<script type="text/javascript" src="/school/static/src/js/dashboard1.js"></script>
+            <script type="text/javascript" src="/school/static/src/js/dashboard2.js"></script>
+            <script type="text/javascript" src="/school/static/src/js/dashboard3.js"></script>
+            <script type="text/javascript" src="/school/static/src/js/dashboard4.js"></script>
+        </xpath>
+    </template>
+
+    <!-- Action Of Form, Tree & Kanban View Of Admission Register Information -->
+    <record id="some-report-client-action_d1" model="ir.actions.client">
+        <field name="name">Report Page</field>
+        <field name="tag">dashboard1</field>
+    </record>
+    <record id="some-report-client-action_d2" model="ir.actions.client">
+        <field name="name">Report Page</field>
+        <field name="tag">dashboard2</field>
+    </record>
+    <record id="some-report-client-action_d3" model="ir.actions.client">
+        <field name="name">Report Page</field>
+        <field name="tag">dashboard3</field>
+    </record>
+    <record id="some-report-client-action_d4" model="ir.actions.client">
+        <field name="name">Report Page</field>
+        <field name="tag">dashboard4</field>
+    </record>
+
+
+    <menuitem id="admission_dashboards" name="Dashboards" parent="menu_ems"
+              sequence="3" groups="school.group_school_administration,school.group_is_admission"/>
+
+    <menuitem id="dashboard1" name="Students Details" parent="admission_dashboards" action="school.some-report-client-action_d1"
+              sequence="1" groups="school.group_school_administration,school.group_is_admission"/>
+    <menuitem id="dashboard2" name="Fees and Expense" parent="admission_dashboards" action="school.some-report-client-action_d2"
+              sequence="2" groups="school.group_school_administration,school.group_is_admission"/>
+    <menuitem id="dashboard3" name="Event Calendar" parent="admission_dashboards" action="school.some-report-client-action_d3"
+              sequence="3" groups="school.group_school_administration,school.group_is_admission"/>
+    <menuitem id="dashboard4" name="Student Information" parent="admission_dashboards" action="school.some-report-client-action_d4"
+              sequence="4" groups="school.group_school_administration,school.group_is_admission"/>
+
+</odoo>

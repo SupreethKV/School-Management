@@ -10,7 +10,7 @@
     'complexity': 'easy',
     'Summary': 'A Module For School Management',
     'images': ['static/description/EMS.jpg'],
-    'depends': ['hr', 'crm', 'account'],
+    'depends': ['hr', 'crm', 'account', 'web'],
     'data': ['security/school_security.xml',
              'security/ir.model.access.csv',
              'wizard/terminate_reason_view.xml',
@@ -24,7 +24,13 @@
              'wizard/move_standards_view.xml',
              'views/report_view.xml',
              'views/identity_card.xml',
-             'views/template_view.xml'],
+             'views/template_view.xml',
+             'views/dashboard1_view.xml'],
+    'qweb': [
+            'static/src/xml/dashboard1.xml',
+            'static/src/xml/dashboard2.xml',
+            'static/src/xml/dashboard3.xml',
+            'static/src/xml/dashboard4.xml'],
     'demo': ['demo/school_demo.xml'],
     'installable': True,
     'application': True
