@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Tree View Of Daily Attendance Information -->
+
+        <record id="view_mass_attendance_tree" model="ir.ui.view">
+            <field name="name">daily.attendance.tree</field>
+            <field name="model">daily.attendance</field>
+            <field name="arch" type="xml">
+                <tree string="Mass Attendance Information">
+                    <field name="date" />
+                    <field name="total_student" string="Total Employees"/>
+                    <field name="total_presence" string="Total Present"/>
+                    <field name="total_absent" string="Total Absent"/>
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View Of Daily Attendance Information -->
+
+        <record id="view_mass_attendance_form_1" model="ir.ui.view">
+            <field name="name">daily.attendance.form</field>
+            <field name="model">daily.attendance</field>
+            <field name="arch" type="xml">
+                <form string="Mass Attendance Information">
+                    <header>
+                        <button name="attendance_validate" string="Validate" states="draft" type="object"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <separator string="Mass Attendance Sheet" />
+                        <group colspan="4" col="4">
+                            <field name="user_id" placeholder="Select" required="1" options="{&quot;no_create&quot;: True}"/>
+                            <field name="date" attrs="{'readonly':[('state','not in','draft')]}" required="1"/>
+                        </group>
+                        <group col="2" string="Attendance Indicator">
+                            <field name="total_student" />
+                            <field name="total_presence" />
+                            <field name="total_absent" />
+                            <field name="date_time_from" invisible="1"/>
+                            <field name="date_time_to" invisible="1"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Students">
+                                <field name="employee_ids" nolabel="1" colspan="4">
+                                    <tree string="Students Information" editable="bottom" delete="false" create="false">
+                                        <field name="emp_id" invisible="1"/>
+                                        <field name="employe_id"/>
+                                        <field name="check_in"/>
+                                        <field name="check_out"/>
+                                        <field name="is_present"/>
+                                        <field name="is_absent"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Action Of Form & Tree Views Of Mass Attendance Information -->
+
+        <record id="action_daily_attendance_form" model="ir.actions.act_window">
+            <field name="name">Mass Attendance</field>
+            <field name="res_model">daily.attendance</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+         <!-- Menu Item Of Mass Attendance Sheets -->
+
+        <menuitem id="menu_mass_attendances" name="Mass Attendance"
+                  parent="hr_attendance.menu_hr_attendance_manage_attendances" sequence="11" groups="hr_attendance.group_hr_attendance_user"
+                  action="mass_attendance.action_daily_attendance_form"/>
+
+    </data>
+</odoo>
