@@ -141,3 +141,11 @@ header > .main-nav > .container-fluid .o_sub_menu > .o_sub_menu_content > .oe_se
 header > .main-nav > .container-fluid .o_sub_menu > .o_sub_menu_content > .oe_secondary_menu > li > a{
     color: FF7F50 !important;
 }
+
+.o_form_view .o_horizontal_separator {
+    color: #33424f !important;
+}
+
+div.o_checkbox > input {
+    opacity: 1.5 !important;
+}

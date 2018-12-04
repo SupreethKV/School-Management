@@ -3,7 +3,7 @@
 {
     'name': 'School',
     'version': '11.0.1.0.0',
-    'author': 'Serpent Consulting Services Pvt. Ltd.',
+    'author': 'Supreeth',
     'website': 'http://www.serpentcs.com',
     'category': 'School Management',
     'license': "AGPL-3",
@@ -30,7 +30,8 @@
             'static/src/xml/dashboard1.xml',
             'static/src/xml/dashboard2.xml',
             'static/src/xml/dashboard3.xml',
-            'static/src/xml/dashboard4.xml'],
+            'static/src/xml/dashboard4.xml',
+	    'static/src/xml/logout_page.xml'],
     'demo': ['demo/school_demo.xml'],
     'installable': True,
     'application': True

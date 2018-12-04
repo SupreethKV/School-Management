@@ -8,7 +8,7 @@ from odoo import fields, models
 class ResCompany(models.Model):
     _inherit = 'res.company'
 
-    color_background = fields.Char('Select Background Color', default="#ff0")
+    color_background = fields.Char('Select Background Color', default="#ff5b3d")
     dashboard_background = fields.Binary(attachment=True)
 
 
